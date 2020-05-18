@@ -1,0 +1,29 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Aks\workspace\Tools Website\target\scala-2.13\tools-website_2.13-1.0-SNAPSHOT-sources.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	application.conf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\conf\application.conf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\conf\logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	routes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\conf\routes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers\Calculator.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\controllers\Calculator.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers\HomeController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\controllers\HomeController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers\XMLDiffFinder.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\controllers\XMLDiffFinder.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers\XMLExtractor.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\controllers\XMLExtractor.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models\ExcelReader.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\models\ExcelReader.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models\ExcelToXMLConverter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\models\ExcelToXMLConverter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models\ObjectFactory.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\models\ObjectFactory.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models\STEPProductInformation.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\models\STEPProductInformation.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models\XMLUtils.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\models\XMLUtils.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models\XMLWriter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\app\models\XMLWriter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

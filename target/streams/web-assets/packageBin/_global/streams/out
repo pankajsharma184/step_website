@@ -1,0 +1,127 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Aks\workspace\Tools Website\target\scala-2.13\tools-website_2.13-1.0-SNAPSHOT-web-assets.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/images\header-pattern.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\images\header-pattern.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery\jquery.slim.min.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery\jquery.slim.min.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap-grid.min.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap-grid.min.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/stylesheets\prism.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\stylesheets\prism.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/stylesheets[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\stylesheets[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js\bootstrap.bundle.min.js.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js\bootstrap.bundle.min.js.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery-easing[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery-easing[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap-grid.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap-grid.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/fonts\fontawesome-webfont.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\fonts\fontawesome-webfont.eot[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap-reboot.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap-reboot.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js\bootstrap.bundle.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js\bootstrap.bundle.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap.min.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap.min.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js\bootstrap.bundle.js.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js\bootstrap.bundle.js.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/stylesheets\default.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\stylesheets\default.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery-easing\jquery.easing.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery-easing\jquery.easing.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js\bootstrap.js.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js\bootstrap.js.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/css\scrolling-nav.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\css\scrolling-nav.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/images\banner-img.jpg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\images\banner-img.jpg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/js\custom.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\js\custom.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js\bootstrap.min.js.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js\bootstrap.min.js.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery\jquery.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery\jquery.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/fonts\fontawesome-webfont.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\fonts\fontawesome-webfont.svg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap-grid.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap-grid.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap-reboot.min.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap-reboot.min.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/images\external.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\images\external.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/js\scrolling-nav.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\js\scrolling-nav.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/images\favicon.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\images\favicon.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js\bootstrap.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js\bootstrap.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/images\body-banner-img.jpg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\images\body-banner-img.jpg[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery\jquery.min.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery\jquery.min.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery-easing\jquery.easing.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery-easing\jquery.easing.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/js\prism.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\js\prism.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/fonts\fontawesome-webfont.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\fonts\fontawesome-webfont.ttf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/images[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\images[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap.min.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap.min.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/css\custom.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\css\custom.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery\jquery.slim.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery\jquery.slim.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap-reboot.min.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap-reboot.min.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery-easing\jquery.easing.compatibility.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery-easing\jquery.easing.compatibility.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js\bootstrap.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js\bootstrap.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/js\main.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\js\main.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/fonts[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\fonts[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/js\hello.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\js\hello.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery\jquery.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery\jquery.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/stylesheets\main.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\stylesheets\main.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/fonts\fontawesome-webfont.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\fonts\fontawesome-webfont.woff[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/js\jquery-3.4.1.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\js\jquery-3.4.1.min.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\js\bootstrap.bundle.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\js\bootstrap.bundle.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/fonts\FontAwesome.otf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\fonts\FontAwesome.otf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap-reboot.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap-reboot.css.map[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\bootstrap\css\bootstrap-grid.min.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\bootstrap\css\bootstrap-grid.min.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/stylesheets\fonts.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\stylesheets\fonts.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/vendor\jquery\jquery.slim.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Aks\workspace\Tools Website\public\vendor\jquery\jquery.slim.js[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

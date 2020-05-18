@@ -1,0 +1,7 @@
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\Aks\workspace\Tools Website\app\views\xmldifffinder2.scala.html:36:49: symbol literal is deprecated; use Symbol("_label") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m			@helper.inputText(extract("sourceFilePath"), '_label -> "Enter Source File Path ")[0m
+[0m[[0m[33mwarn[0m] [0m[0m			                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\Aks\workspace\Tools Website\app\views\xmldifffinder2.scala.html:37:49: symbol literal is deprecated; use Symbol("_label") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m			@helper.inputText(extract("targetFilePath"), '_label -> "Enter Target File path ")		[0m
+[0m[[0m[33mwarn[0m] [0m[0m			                                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

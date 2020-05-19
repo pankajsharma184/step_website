@@ -60,11 +60,14 @@
           <h2>Form</h2>
           <hr class="style1">
           <div id="featured">
-			@helper.form(action =routes.HomeController.xmldifffinder()){
-			@helper.inputText(extract("sourceFilePath"), '_label -> "Enter Source File Path ")
-			@helper.inputText(extract("targetFilePath"), '_label -> "Enter Target File path ")		
-		
-		<input type="submit" name="Diff" value="Find Difference">
+			@helper.form(action =routes.HomeController.attributeTool()){			
+			@helper.inputText(extract("inputFilePath"), '_label -> "Enter Input File Path ")
+			@helper.inputText(extract("outputFilePath"), '_label -> "Enter Output File path ")	
+			@helper.inputText(extract("fileName"), '_label -> "Enter File name ")	
+			@helper.inputText(extract("configFilePath"), '_label -> "Enter config path ")
+			@helper.inputText(extract("delimeter"), '_label -> "Enter Delimiter ")
+			
+			<input type="submit" name="submit" value="Convert">
 		}
 		</div>
         </div>

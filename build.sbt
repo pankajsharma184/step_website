@@ -17,7 +17,7 @@ lazy val root = (project in file("."))
       "-parameters",
       "-Xlint:unchecked",
       "-Xlint:deprecation",
-      "-Werror"
+      //"-Werror"
     ),
     // Make verbose tests
     testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))

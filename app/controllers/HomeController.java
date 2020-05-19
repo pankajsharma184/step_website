@@ -199,7 +199,27 @@ public class HomeController extends Controller {
    	 	String tarFPath = diffFindXMLForm.get("targetFilePath");
    	 	XMLDiffFinder diffFinder = new XMLDiffFinder(srcFPath,tarFPath);
    	 	String response = diffFinder.findDifference(srcFPath, tarFPath);
-    	return ok(views.html.index.render(response));
+    	return ok(views.html.index.render(response));    	
+    }
+    
+    public Result openAttributeToolForm(Http.Request request) {
+    	Form<AttributeTool> attrToolForm = formFactory.form(AttributeTool.class);
+    	return ok(views.html.attributeTool.render(attrToolForm,request, messages.preferred(request)));
     	
     }
+    
+    public Result attributeTool(Http.Request request) {
+    	DynamicForm attrToolForm = formFactory.form().bindFromRequest(request);
+   	 	String srcFPath = attrToolForm.get("sourceFilePath");
+   	 	String tarFPath = attrToolForm.get("targetFilePath");
+   	 	//String inputFilePath, String outputFilePath, String fileName, String configFilePath, String delimeter
+   	 	AttributeTool attrTool = new AttributeTool(null,null,null,null,null);
+   	 	String response = attrTool.process();
+    	return ok(views.html.index.render(response));    	
+    }
+    
+    
+    
+    
+    
 }

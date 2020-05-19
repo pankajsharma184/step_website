@@ -15,10 +15,10 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET 	/exceltoxml					controllers.HomeController.openExcelToXMLForm(request: Request)
 GET 	/openExtractXMLForm			controllers.HomeController.openXMLExtractForm(request: Request)
 GET 	/xmldifffinderForm			controllers.HomeController.openXMLDiffFinderForm(request: Request)
-+ nocsrf
+GET 	/xmlAttributeToolForm		controllers.HomeController.openAttributeToolForm(request: Request)
+
 POST	/generateXMLFile			controllers.HomeController.generateXMLFile(request: Request)
-+ nocsrf
 POST	/xmlextractor				controllers.HomeController.extractPartXML(request: Request)
-+ nocsrf
 POST	/xmldifffinder				controllers.HomeController.xmldifffinder(request: Request)
+POST	/attrilbuteTool				controllers.HomeController.attributeTool(request: Request)
 

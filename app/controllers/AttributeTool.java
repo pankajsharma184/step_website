@@ -1,6 +1,9 @@
 package controllers;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Properties;
 
 import com.codifyd.automation.attribute.AttributeExcelHandler;
 import com.codifyd.automation.util.UserInputFileUtilDO;
@@ -12,7 +15,21 @@ public class AttributeTool {
 		userInputFileUtilDO.setInputPath(inputFilePath);
 		userInputFileUtilDO.setOutputPath(outputFilePath);
 		userInputFileUtilDO.setFilename(fileName);
-		userInputFileUtilDO.setPropertiesFile(null);
+		Properties prop = new Properties();
+		FileReader reader;
+		try {
+			reader = new FileReader(configFilePath);
+			prop.load(reader);
+	        reader.close();
+			
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		userInputFileUtilDO.setPropertiesFile(prop);
 		userInputFileUtilDO.setDelimeters(delimeter);
 		
 		AttributeExcelHandler convertXMLToExcel = new AttributeExcelHandler();

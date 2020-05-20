@@ -1,11 +1,11 @@
-@(calc : Form[Calculator])(implicit  request: Http.Request, messages: play.i18n.Messages)
-@import views.html.helper._;
+@(res : Integer)
 
-
-<html >
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>!! Website !!</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
 
 
 </head>
@@ -20,7 +20,6 @@
 		<div id="menu">
 			<ul>
 				
-				
 			</ul>
 		</div>
 	</div>
@@ -33,14 +32,9 @@
 			
 			
 		</div>
-		
-			 @helper.form(action=routes.HomeController.add()){
-			@helper.inputText(field = calc("a"), '_label -> "Enter 1st Num")
-			@helper.inputText(calc("b"), '_label -> "Enter 2nd Num")
-			
-			<input type="submit" name="Add" value="Add">
-		}
-		
+		<div id="featured">
+			 <p><b>The result is : @res</b></p>
+		</div>
 		
 	</div>
 </div>

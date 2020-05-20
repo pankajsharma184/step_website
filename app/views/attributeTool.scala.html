@@ -59,9 +59,10 @@
         <div class="col-lg-8 mx-auto">
           <h2>Form</h2>
           <hr class="style1">
-          <div id="featured">
-            <b>@request.flash().get("info")</b>
-            <p>
+          <div id="featured">     
+          	
+          	<div class="alert alert-info">@request.flash().get("info")</div>
+          			
 			@helper.form(action =routes.HomeController.attributeTool()){		
 			@helper.select(field = extract("types"), options = helper.options(types).toSeq, '_label -> "Select an Option")	
 			@helper.inputText(extract("inputFilePath"), '_label -> "Enter Input File Path ")

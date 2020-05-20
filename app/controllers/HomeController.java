@@ -108,8 +108,7 @@ public class HomeController extends Controller {
 					attrToolForm.get("configFilePath"), attrToolForm.get("delimeter"));
 		}
 			 
-		return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", response);
-		
+		return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", response);		
 		
 	}
 

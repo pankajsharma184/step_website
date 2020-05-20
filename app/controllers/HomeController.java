@@ -98,7 +98,7 @@ public class HomeController extends Controller {
 		AttributeTool attrTool = new AttributeTool();
 		// String inputFilePath, String outputFilePath, String fileName, String
 		// configFilePath, String delimeter
-		String selectedOpt = formFactory.form().bindFromRequest(request).get("opt");
+		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
 		String response ;
 		if(selectedOpt.equals("Excel to XML")){
 			response = attrTool.convertExcelToXML();
@@ -107,9 +107,10 @@ public class HomeController extends Controller {
 					attrToolForm.get("outputFilePath"), attrToolForm.get("fileName"),
 					attrToolForm.get("configFilePath"), attrToolForm.get("delimeter"));
 		}
-				 
-		//return ok(views.html.result.render(response));
-		return index();
+			 
+		return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", response);
+		
+		
 	}
 
 }

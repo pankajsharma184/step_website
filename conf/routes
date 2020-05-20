@@ -20,5 +20,5 @@ GET 	/xmlAttributeToolForm		controllers.HomeController.openAttributeToolForm(req
 POST	/generateXMLFile			controllers.HomeController.generateXMLFile(request: Request)
 POST	/xmlextractor				controllers.HomeController.extractPartXML(request: Request)
 POST	/xmldifffinder				controllers.HomeController.xmldifffinder(request: Request)
-POST	/attrilbuteTool				controllers.HomeController.attributeTool(request: Request)
+POST	/attributeTool				controllers.HomeController.attributeTool(request: Request)
 

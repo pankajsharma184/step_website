@@ -200,21 +200,29 @@ public class HomeController extends Controller {
 	}
 
 	public Result openAttributeToolForm(Http.Request request) {
-		Form<AttributeTool> attrToolForm = formFactory.form(AttributeTool.class);
-		return ok(views.html.attributeTool.render(attrToolForm, request, messages.preferred(request)));
+		Form<AttributeTool> attrToolForm = formFactory.form(AttributeTool.class);		
+		List<String> options = new ArrayList<String>();
+		options.add("Excel to XML");
+		options.add("XML to Excel");		
+		return ok(views.html.attributeTool.render(attrToolForm,options, request, messages.preferred(request)));
 
 	}
 
 	public Result attributeTool(Http.Request request) {
-		DynamicForm attrToolForm = formFactory.form().bindFromRequest(request);
-		String srcFPath = attrToolForm.get("sourceFilePath");
-		String tarFPath = attrToolForm.get("targetFilePath");
+		DynamicForm attrToolForm = formFactory.form().bindFromRequest(request);		
+		AttributeTool attrTool = new AttributeTool();
 		// String inputFilePath, String outputFilePath, String fileName, String
 		// configFilePath, String delimeter
-		AttributeTool attrTool = new AttributeTool(attrToolForm.get("inputFilePath"),
-				attrToolForm.get("outputFilePath"), attrToolForm.get("fileName"),
-				attrToolForm.get("configFilePath"), attrToolForm.get("delimeter"));
-		String response = attrTool.process();
+		String selectedOpt = formFactory.form().bindFromRequest(request).get("opt");
+		String response ;
+		if(selectedOpt.equals("Excel to XML")){
+			response = attrTool.convertExcelToXML();
+		}else{
+			response = attrTool.convertXMLToExcel(attrToolForm.get("inputFilePath"),
+					attrToolForm.get("outputFilePath"), attrToolForm.get("fileName"),
+					attrToolForm.get("configFilePath"), attrToolForm.get("delimeter"));
+		}
+				 
 		return ok(views.html.index.render(response));
 	}
 

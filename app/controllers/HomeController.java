@@ -82,7 +82,7 @@ public class HomeController extends Controller {
 		return ok(views.html.result.render("1"));
 	}
 
-	
+
 
 	public Result openAttributeToolForm(Http.Request request) {
 		Form<AttributeTool> attrToolForm = formFactory.form(AttributeTool.class);		
@@ -109,6 +109,62 @@ public class HomeController extends Controller {
 		}
 			 
 		return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", response);		
+		
+	}
+	
+	public Result openAttributeLinksToolForm(Http.Request request) {
+		Form<AttributeLinksTool> attrLinksToolForm = formFactory.form(AttributeLinksTool.class);		
+		List<String> options = new ArrayList<String>();
+		options.add("Excel to XML");
+		options.add("XML to Excel");		
+		return ok(views.html.attributeLinksTool.render(attrLinksToolForm,options, request, messages.preferred(request)));
+
+	}
+
+	public Result attributeLinksTool(Http.Request request) {
+		DynamicForm attrToolForm = formFactory.form().bindFromRequest(request);		
+		AttributeLinksTool attrLinksTool = new AttributeLinksTool();
+		// String inputFilePath, String outputFilePath, String fileName, String
+		// configFilePath, String delimeter
+		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
+		String response ;
+		if(selectedOpt.equals("Excel to XML")){
+			response = attrLinksTool.convertExcelToXML();
+		}else{
+			response = attrLinksTool.convertXMLToExcel(attrToolForm.get("inputFilePath"),
+					attrToolForm.get("outputFilePath"), attrToolForm.get("fileName"),
+					attrToolForm.get("configFilePath"), attrToolForm.get("delimeter"));
+		}
+			 
+		return redirect(routes.HomeController.openAttributeLinksToolForm()).flashing("info", response);		
+		
+	}
+	
+	public Result openLOVSchemaForm(Http.Request request) {
+		Form<LOVSchema> lovSchema = formFactory.form(LOVSchema.class);		
+		List<String> options = new ArrayList<String>();
+		options.add("Excel to XML");
+		options.add("XML to Excel");		
+		return ok(views.html.lovSchema.render(lovSchema,options, request, messages.preferred(request)));
+
+	}
+
+	public Result lovSchema(Http.Request request) {
+		DynamicForm lovSchemaForm = formFactory.form().bindFromRequest(request);		
+		LOVSchema lovSchema = new LOVSchema();
+		// String inputFilePath, String outputFilePath, String fileName, String
+		// configFilePath, String delimeter
+		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
+		String response ;
+		if(selectedOpt.equals("Excel to XML")){
+			response = lovSchema.convertExcelToXML();
+		}else{
+			response = lovSchema.convertXMLToExcel(lovSchemaForm.get("inputFilePath"),
+					lovSchemaForm.get("outputFilePath"), lovSchemaForm.get("fileName"),
+					lovSchemaForm.get("configFilePath"), lovSchemaForm.get("delimeter"));
+		}
+			 
+		return redirect(routes.HomeController.openLOVSchemaForm()).flashing("info", response);		
 		
 	}
 

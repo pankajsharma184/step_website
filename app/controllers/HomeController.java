@@ -94,18 +94,20 @@ public class HomeController extends Controller {
 	}
 
 	public Result attributeTool(Http.Request request) {
-		DynamicForm attrToolForm = formFactory.form().bindFromRequest(request);		
-		AttributeTool attrTool = new AttributeTool();
-		// String inputFilePath, String outputFilePath, String fileName, String
-		// configFilePath, String delimeter
+		DynamicForm form = formFactory.form().bindFromRequest(request);	
+		String errors = FileValidationUtil.validateFormForValidFiles(form);
+		if(!errors.isEmpty()){
+			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
+		}
+		AttributeTool attrTool = new AttributeTool();		
 		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
 		String response ;
 		if(selectedOpt.equals("Excel to XML")){
 			response = attrTool.convertExcelToXML();
 		}else{
-			response = attrTool.convertXMLToExcel(attrToolForm.get("inputFilePath"),
-					attrToolForm.get("outputFilePath"), attrToolForm.get("fileName"),
-					attrToolForm.get("configFilePath"), attrToolForm.get("delimeter"));
+			response = attrTool.convertXMLToExcel(form.get("inputFilePath"),
+					form.get("outputFilePath"), form.get("fileName"),
+					form.get("configFilePath"), form.get("delimeter"));
 		}
 			 
 		return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", response);		
@@ -122,18 +124,20 @@ public class HomeController extends Controller {
 	}
 
 	public Result attributeLinksTool(Http.Request request) {
-		DynamicForm attrToolForm = formFactory.form().bindFromRequest(request);		
-		AttributeLinksTool attrLinksTool = new AttributeLinksTool();
-		// String inputFilePath, String outputFilePath, String fileName, String
-		// configFilePath, String delimeter
+		DynamicForm form = formFactory.form().bindFromRequest(request);	
+		String errors = FileValidationUtil.validateFormForValidFiles(form);
+		if(!errors.isEmpty()){
+			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
+		}
+		AttributeLinksTool attrLinksTool = new AttributeLinksTool();		
 		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
 		String response ;
 		if(selectedOpt.equals("Excel to XML")){
 			response = attrLinksTool.convertExcelToXML();
 		}else{
-			response = attrLinksTool.convertXMLToExcel(attrToolForm.get("inputFilePath"),
-					attrToolForm.get("outputFilePath"), attrToolForm.get("fileName"),
-					attrToolForm.get("configFilePath"), attrToolForm.get("delimeter"));
+			response = attrLinksTool.convertXMLToExcel(form.get("inputFilePath"),
+					form.get("outputFilePath"), form.get("fileName"),
+					form.get("configFilePath"), form.get("delimeter"));
 		}
 			 
 		return redirect(routes.HomeController.openAttributeLinksToolForm()).flashing("info", response);		
@@ -150,18 +154,20 @@ public class HomeController extends Controller {
 	}
 
 	public Result lovSchema(Http.Request request) {
-		DynamicForm lovSchemaForm = formFactory.form().bindFromRequest(request);		
-		LOVSchema lovSchema = new LOVSchema();
-		// String inputFilePath, String outputFilePath, String fileName, String
-		// configFilePath, String delimeter
+		DynamicForm form = formFactory.form().bindFromRequest(request);	
+		String errors = FileValidationUtil.validateFormForValidFiles(form);
+		if(!errors.isEmpty()){
+			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
+		}
+		LOVSchema lovSchema = new LOVSchema();		
 		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
 		String response ;
 		if(selectedOpt.equals("Excel to XML")){
 			response = lovSchema.convertExcelToXML();
 		}else{
-			response = lovSchema.convertXMLToExcel(lovSchemaForm.get("inputFilePath"),
-					lovSchemaForm.get("outputFilePath"), lovSchemaForm.get("fileName"),
-					lovSchemaForm.get("configFilePath"), lovSchemaForm.get("delimeter"));
+			response = lovSchema.convertXMLToExcel(form.get("inputFilePath"),
+					form.get("outputFilePath"), form.get("fileName"),
+					form.get("configFilePath"), form.get("delimeter"));
 		}
 			 
 		return redirect(routes.HomeController.openLOVSchemaForm()).flashing("info", response);		

@@ -33,7 +33,7 @@
 
   <div class="bg-primary body-banner body-header">
     <div class="container text-center">
-      <h1>Attribute Schema Tools</h1>
+      <h1>LOV Schema Tools</h1>
       <p class="lead"></p>
     </div>
   </div>
@@ -43,11 +43,18 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>About</h2>
-          <p class="lead"> Used when we need to convert schema of an attribute from Excel to XML. Can also be used to convert XML to Excel</p>
+          <p class="lead"> Used when we need to convert schema of a LOV from Excel to XML. Can also be used to convert XML to Excel</p>
           <ul>
-            <li>Input: Source file</li>
-            <li>Output: Converted file</li>           
+            <li>Input File*: Full Source file path which will be converted</li>
+            <li>Output File* : Folder path where the file will be delivered</li>
+            <li>File name* : Desired output file name along with extension[.xml or .xlsx]</li>      
+            <li>Config path : Configuration Path in case there are custom values. Else the default file will be used</li> 
+            <li>Delimiter : Multivalue separator string. Can be blank.</li>       
           </ul>
+          <p> You can Download Below Sample Files for reference </p>
+          <a href="@routes.FileController.downloadAttributeProperties" download> Config Properties </a>, 
+          <a href="@routes.FileController.downloadAttributeExcel" download> Excel File </a>,
+          <a href="@routes.FileController.downloadAttributeXML" download> XML File </a> 				
         </div>
       </div>
     </div>
@@ -64,13 +71,30 @@
           	<div class="alert alert-info">@request.flash().get("info")</div>
           			
 			@helper.form(action =routes.HomeController.lovSchema()){		
-			@helper.select(field = extract("types"), options = helper.options(types).toSeq, '_label -> "Select an Option")	
-			@helper.inputText(extract("inputFilePath"), '_label -> "Enter Input File Path ")
-			@helper.inputText(extract("outputFilePath"), '_label -> "Enter Output File path ")	
-			@helper.inputText(extract("fileName"), '_label -> "Enter File name ")	
-			@helper.inputText(extract("configFilePath"), '_label -> "Enter config path ")
-			@helper.inputText(extract("delimeter"), '_label -> "Enter Delimiter ")
-			
+			@helper.select(field = extract("types"), options = helper.options(types).toSeq, '_label -> "Select")	
+			@helper.inputText(extract("inputFilePath"), 
+				args = ('size) -> 50,
+				('required) -> "required",
+				('_label) -> "Enter Input File path ", 
+				('placeholder) -> "‪C:\\Users\\Jhonny\\input.xlsx")
+			@helper.inputText(extract("outputFilePath"),
+				args = ('size) -> 50,
+				('required) -> "required",
+				('_label) -> "Enter Output Folder path ",
+				('placeholder) -> "‪C:\\Users\\Jhonny")	
+			@helper.inputText(extract("fileName"),
+				args = ('size) -> 50,
+				('required) -> "required",
+				('_label) -> "Enter File name ",
+				('placeholder) -> "‪output.xml")	
+			@helper.inputText(extract("configFilePath"),
+				args = ('size) -> 50,
+			 	('_label) -> "Enter configuration file path ",
+			 	('placeholder) -> "‪C:\\Users\\Jhonny\\attribute-config.properties")
+			@helper.inputText(extract("delimeter"),
+				args = ('size) -> 50,
+				('_label) -> "Enter Delimiter ",
+				('placeholder) -> "|")			
 			<input type="submit" name="submit" value="Convert">
 		}
 		</div>

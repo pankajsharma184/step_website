@@ -74,14 +74,17 @@
 			@helper.select(field = extract("types"), options = helper.options(types).toSeq, '_label -> "Select")	
 			@helper.inputText(extract("inputFilePath"), 
 				args = ('size) -> 50,
+				('required) -> "required",
 				('_label) -> "Enter Input File path ", 
 				('placeholder) -> "‪C:\\Users\\Jhonny\\input.xlsx")
 			@helper.inputText(extract("outputFilePath"),
 				args = ('size) -> 50,
+				('required) -> "required",
 				('_label) -> "Enter Output Folder path ",
 				('placeholder) -> "‪C:\\Users\\Jhonny")	
 			@helper.inputText(extract("fileName"),
 				args = ('size) -> 50,
+				('required) -> "required",
 				('_label) -> "Enter File name ",
 				('placeholder) -> "‪output.xml")	
 			@helper.inputText(extract("configFilePath"),
@@ -91,8 +94,7 @@
 			@helper.inputText(extract("delimeter"),
 				args = ('size) -> 50,
 				('_label) -> "Enter Delimiter ",
-				('placeholder) -> "|")
-			
+				('placeholder) -> "|")			
 			<input type="submit" name="submit" value="Convert">
 		}
 		</div>

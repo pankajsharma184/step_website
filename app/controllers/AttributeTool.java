@@ -12,24 +12,10 @@ public class AttributeTool {
 	
 	public String convertXMLToExcel(String inputFilePath, String outputFilePath, String fileName, String configFilePath, String delimeter){
 		UserInputFileUtilDO userInputFileUtilDO = new UserInputFileUtilDO();
-		userInputFileUtilDO.setInputPath(inputFilePath);
+		userInputFileUtilDO.setInputPath(inputFilePath,"");
 		userInputFileUtilDO.setOutputPath(outputFilePath);
-		userInputFileUtilDO.setFilename(fileName);
-		Properties prop = new Properties();
-		FileReader reader;
-		try {
-			reader = new FileReader(configFilePath);
-			prop.load(reader);
-	        reader.close();
-			
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		userInputFileUtilDO.setPropertiesFile(prop);
+		userInputFileUtilDO.setFilename(fileName,"");
+		userInputFileUtilDO.setPropertiesFile(configFilePath, "Attribute");
 		userInputFileUtilDO.setDelimeters(delimeter);
 		
 		AttributeExcelHandler convertXMLToExcel = new AttributeExcelHandler();

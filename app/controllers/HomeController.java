@@ -99,12 +99,28 @@ public class HomeController extends Controller {
 		if(!errors.isEmpty()){
 			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
 		}
-		AttributeTool attrTool = new AttributeTool();		
+		AttributeTool attrTool = new AttributeTool();
+		String inputFilePath = form.get("inputFilePath");
+		String outputFilePath = form.get("outputFilePath");
+		String fileName = form.get("fileName");
+		String configFilePath = form.get("configFilePath");
+		String delimeter = form.get("delimeter");
+		
+		if(FileValidationUtil.isNullOrBlank(outputFilePath)){
+			outputFilePath = FileValidationUtil.getDefaultOutputDirectoryFromInput(inputFilePath);
+		}				
+		
 		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
 		String response ;
 		if(selectedOpt.equals("Excel to XML")){
+			if(FileValidationUtil.isNullOrBlank(fileName)){
+				fileName = FileValidationUtil.setDefaultXMLFilenameFromInput(inputFilePath);
+			}	
 			response = attrTool.convertExcelToXML();
 		}else{
+			if(FileValidationUtil.isNullOrBlank(fileName)){
+				fileName = FileValidationUtil.setDefaultExcelFilenameFromInput(inputFilePath);
+			}	
 			response = attrTool.convertXMLToExcel(form.get("inputFilePath"),
 					form.get("outputFilePath"), form.get("fileName"),
 					form.get("configFilePath"), form.get("delimeter"));

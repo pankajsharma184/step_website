@@ -17,14 +17,14 @@ public class AttributeTool {
 		try {
 			userInputFileUtilDO.setPropertiesFile(configFilePath, "Attribute");
 		} catch (IOException e) {
-			throw new RuntimeException("Error occured while processing properties file : "+e.getMessage());
+			return("Error occured while processing properties file : "+e.getMessage());
 		}
 		
 		AttributeXMLFileHandler convertXMLToExcel = new AttributeXMLFileHandler();
 		try {
 			convertXMLToExcel.handleFile(userInputFileUtilDO);
 		} catch (Exception e) {
-			throw new RuntimeException("Error occured while converting file : "+e.getMessage());
+			return("Error occured while converting file : "+e.getMessage());
 		}
 		return "File Generated in path : " + outputFilePath+File.separator+fileName;
 	}

@@ -49,7 +49,7 @@
             <li>Output File* : Folder path where the file will be delivered</li>
             <li>File name* : Desired output file name along with extension[.xml or .xlsx]</li>      
             <li>Config path : Configuration Path in case there are custom values. Else the default file will be used</li> 
-            <li>Delimiter : Multivalue separator string. Can be blank.</li>       
+            <li>Delimiter : Multivalue separator string. Can be blank. Default ; will be used.</li>       
           </ul>
           <p> You can Download Below Sample Files for reference </p>
           <a href="@routes.FileController.downloadAttributeProperties" download> Config Properties </a>, 
@@ -94,7 +94,7 @@
 			@helper.inputText(extract("delimeter"),
 				args = ('size) -> 50,
 				('_label) -> "Enter Delimiter ",
-				('placeholder) -> "|")			
+				('placeholder) -> ";")			
 			<input type="submit" name="submit" value="Convert">
 		}
 		</div>

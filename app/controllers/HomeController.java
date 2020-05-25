@@ -121,9 +121,9 @@ public class HomeController extends Controller {
 			if(FileValidationUtil.isNullOrBlank(fileName)){
 				fileName = FileValidationUtil.setDefaultExcelFilenameFromInput(inputFilePath);
 			}	
-			response = attrTool.convertXMLToExcel(form.get("inputFilePath"),
-					form.get("outputFilePath"), form.get("fileName"),
-					form.get("configFilePath"), form.get("delimeter"));
+			response = attrTool.convertXMLToExcel(inputFilePath,
+					outputFilePath, fileName,
+					configFilePath, delimeter);
 		}
 			 
 		return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", response);		

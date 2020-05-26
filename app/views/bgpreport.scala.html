@@ -45,10 +45,12 @@
           <h2>About</h2>
           <p class="lead">If we are importing a set of files and you need the set of products which have errors in a excel sheet. Generates an error file with faulty attributes as columns and error products as rows.</p>
           <p> The content is error string we see in BGP log.</p>
+          <p> The excel is generated in the parent folder of input file with name BGPErrorFile_Timestamp.xlsx
           <ul>
             <li>Input Server*: URL of customer step system.</li>
-            <li>Username*: URL of customer step system.</li>
-            <li>Password*: URL of customer step system.</li>
+            <li>Username*: Username</li>
+            <li>Password*: Password</li>
+            <li>Context*: Context ID</li>
             <li>Input File*: Full Source file path of input file.</li>              
           </ul>
           <p> You can Download Below Sample Files for reference </p>
@@ -84,6 +86,11 @@
 				('required) -> "required",
 				('_label) -> "Enter Password ", 
 				('placeholder) -> "stepsys")
+			@helper.inputText(extract("contextID"), 
+				args = ('size) -> 50,
+				('required) -> "required",
+				('_label) -> "Enter Context ID ", 
+				('placeholder) -> "Context1")
 			@helper.inputText(extract("inputFilePath"), 
 				args = ('size) -> 50,
 				('required) -> "required",

@@ -25,6 +25,10 @@ import org.w3c.dom.Element;
 
 import com.codifyd.automation.attribute.AttributeExcelFileHandler;
 import com.codifyd.automation.attribute.AttributeXMLFileHandler;
+import com.codifyd.automation.attributelink.AttributeLinkExcelFileHandler;
+import com.codifyd.automation.attributelink.AttributeLinkXMLFileHandler;
+import com.codifyd.automation.lov.LovExcelFileHandler;
+import com.codifyd.automation.lov.LovXMLFileHandler;
 import com.codifyd.automation.util.FileConversionHandler;
 
 import play.data.DynamicForm;
@@ -130,16 +134,33 @@ public class HomeController extends Controller {
 		if(!errors.isEmpty()){
 			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
 		}
-		AttributeLinksTool attrLinksTool = new AttributeLinksTool();		
+		String inputFilePath = form.get("inputFilePath");
+		String outputFilePath = form.get("outputFilePath");
+		String fileName = form.get("fileName");
+		String configFilePath = form.get("configFilePath");
+		String delimeter = form.get("delimeter");
+		
+		if(FileValidationUtil.isNullOrBlank(outputFilePath)){
+			outputFilePath = FileValidationUtil.getDefaultOutputDirectoryFromInput(inputFilePath);
+		}				
+		
 		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
-		String response ;
+		 
+		FileConversionHandler handler;
 		if(selectedOpt.equals("Excel to XML")){
-			response = attrLinksTool.convertExcelToXML();
+			if(FileValidationUtil.isNullOrBlank(fileName)){
+				fileName = FileValidationUtil.setDefaultXMLFilenameFromInput(inputFilePath);
+			}
+			handler = new AttributeLinkExcelFileHandler();
+			
 		}else{
-			response = attrLinksTool.convertXMLToExcel(form.get("inputFilePath"),
-					form.get("outputFilePath"), form.get("fileName"),
-					form.get("configFilePath"), form.get("delimeter"));
+			if(FileValidationUtil.isNullOrBlank(fileName)){
+				fileName = FileValidationUtil.setDefaultExcelFilenameFromInput(inputFilePath);
+			}	
+			handler = new AttributeLinkXMLFileHandler();			
 		}
+		AttributeLinksTool attrLinksTool = new AttributeLinksTool();
+		String response = attrLinksTool.convertFile(inputFilePath, outputFilePath, fileName, configFilePath, delimeter, handler);
 			 
 		return redirect(routes.HomeController.openAttributeLinksToolForm()).flashing("info", response);		
 		
@@ -160,17 +181,35 @@ public class HomeController extends Controller {
 		if(!errors.isEmpty()){
 			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
 		}
-		LOVSchema lovSchema = new LOVSchema();		
+				
+		String inputFilePath = form.get("inputFilePath");
+		String outputFilePath = form.get("outputFilePath");
+		String fileName = form.get("fileName");
+		String configFilePath = form.get("configFilePath");
+		String delimeter = form.get("delimeter");
+		
+		if(FileValidationUtil.isNullOrBlank(outputFilePath)){
+			outputFilePath = FileValidationUtil.getDefaultOutputDirectoryFromInput(inputFilePath);
+		}				
+		
 		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
-		String response ;
+		 
+		FileConversionHandler handler;
 		if(selectedOpt.equals("Excel to XML")){
-			response = lovSchema.convertExcelToXML();
+			if(FileValidationUtil.isNullOrBlank(fileName)){
+				fileName = FileValidationUtil.setDefaultXMLFilenameFromInput(inputFilePath);
+			}
+			handler = new LovExcelFileHandler();
+			
 		}else{
-			response = lovSchema.convertXMLToExcel(form.get("inputFilePath"),
-					form.get("outputFilePath"), form.get("fileName"),
-					form.get("configFilePath"), form.get("delimeter"));
+			if(FileValidationUtil.isNullOrBlank(fileName)){
+				fileName = FileValidationUtil.setDefaultExcelFilenameFromInput(inputFilePath);
+			}	
+			handler = new LovXMLFileHandler();			
 		}
-			 
+		LOVSchema lovSchema = new LOVSchema();	
+		String response = lovSchema.convertFile(inputFilePath, outputFilePath, fileName, configFilePath, delimeter, handler);
+		
 		return redirect(routes.HomeController.openLOVSchemaForm()).flashing("info", response);		
 		
 	}
@@ -185,13 +224,11 @@ public class HomeController extends Controller {
 		DynamicForm form = formFactory.form().bindFromRequest(request);	
 		String errors = FileValidationUtil.validateFormForValidFiles(form);
 		if(!errors.isEmpty()){
-			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
+			return redirect(routes.HomeController.openBGPReportForm()).flashing("info", errors);	
 		}
-		BGPReport bgpReport = new BGPReport();		
-		
-		String response = bgpReport.generateReport();
-		
-			 
+		BGPReport bgpReport = new BGPReport();			
+		String response = bgpReport.generateReport(form.get("inputServerPath"),form.get("username"),
+				form.get("password"),form.get("contextID"),form.get("inputFile"));			 
 		return redirect(routes.HomeController.openBGPReportForm()).flashing("info", response);		
 		
 	}

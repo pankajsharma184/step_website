@@ -45,10 +45,10 @@
           <h2>About</h2>
           <p class="lead"> Used when we need to convert schema of a LOV from Excel to XML. Can also be used to convert XML to Excel</p>
           <ul>
-            <li>Input File*: Full Source file path which will be converted</li>
-            <li>Output File* : Folder path where the file will be delivered</li>
-            <li>File name* : Desired output file name along with extension[.xml or .xlsx]</li>      
-            <li>Config path : Configuration Path in case there are custom values. Else the default file will be used</li> 
+            <li>Input File*: Full Source file path which will be converted.</li>
+            <li>Output File : Folder path where the file will be delivered. If blank, Parent directory of input file will be used.</li>
+            <li>File name : Desired output file name along with extension[.xml or .xlsx]. If blank, Converted[inputfilename]Timestamp.ext will be used.</li>      
+            <li>Config path : Configuration Path in case there are custom values. Else the default file will be used.</li> 
             <li>Delimiter : Multivalue separator string. Can be blank. Default ; will be used.</li>       
           </ul>
           <p> You can Download Below Sample Files for reference </p>
@@ -78,13 +78,11 @@
 				('_label) -> "Enter Input File path ", 
 				('placeholder) -> "‪C:\\Users\\Jhonny\\input.xlsx")
 			@helper.inputText(extract("outputFilePath"),
-				args = ('size) -> 50,
-				('required) -> "required",
+				args = ('size) -> 50,				
 				('_label) -> "Enter Output Folder path ",
 				('placeholder) -> "‪C:\\Users\\Jhonny")	
 			@helper.inputText(extract("fileName"),
-				args = ('size) -> 50,
-				('required) -> "required",
+				args = ('size) -> 50,				
 				('_label) -> "Enter File name ",
 				('placeholder) -> "‪output.xml")	
 			@helper.inputText(extract("configFilePath"),

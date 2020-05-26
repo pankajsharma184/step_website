@@ -23,6 +23,10 @@ import javax.inject.Inject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import com.codifyd.automation.attribute.AttributeExcelFileHandler;
+import com.codifyd.automation.attribute.AttributeXMLFileHandler;
+import com.codifyd.automation.util.FileConversionHandler;
+
 import play.data.DynamicForm;
 import play.data.DynamicForm.Dynamic;
 import play.data.Form;
@@ -62,28 +66,7 @@ public class HomeController extends Controller {
 		return ok(views.html.index.render("This is HOMEPAGE!"));
 	}
 
-	public Result openCalculator(Http.Request request) {
-		Form<Calculator> calculatorForm = formFactory.form(Calculator.class);
-		return ok(views.html.calculator.render(calculatorForm, request, messages.preferred(request)));
-
-	}
-
-	// public Result explore() {
-	// return ok(views.html.explore.render());
-	// }
-	//
-	// public Result tutorial() {
-	// return ok(views.html.tutorial.render());
-	// }
-	public Result add(Http.Request req) {
-		DynamicForm cForm = formFactory.form().bindFromRequest(req);
-		System.out.println("Calc : 1st num is " + cForm);
-		int res = new Calculator((Integer.parseInt(cForm.get("a"))), Integer.parseInt(cForm.get("b"))).add();
-		return ok(views.html.result.render("1"));
-	}
-
-
-
+	
 	public Result openAttributeToolForm(Http.Request request) {
 		Form<AttributeTool> attrToolForm = formFactory.form(AttributeTool.class);		
 		List<String> options = new ArrayList<String>();
@@ -99,7 +82,7 @@ public class HomeController extends Controller {
 		if(!errors.isEmpty()){
 			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
 		}
-		AttributeTool attrTool = new AttributeTool();
+		
 		String inputFilePath = form.get("inputFilePath");
 		String outputFilePath = form.get("outputFilePath");
 		String fileName = form.get("fileName");
@@ -111,20 +94,22 @@ public class HomeController extends Controller {
 		}				
 		
 		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
-		String response ;
+		 
+		FileConversionHandler handler;
 		if(selectedOpt.equals("Excel to XML")){
 			if(FileValidationUtil.isNullOrBlank(fileName)){
 				fileName = FileValidationUtil.setDefaultXMLFilenameFromInput(inputFilePath);
-			}	
-			response = attrTool.convertExcelToXML();
+			}
+			handler = new AttributeExcelFileHandler();
+			
 		}else{
 			if(FileValidationUtil.isNullOrBlank(fileName)){
 				fileName = FileValidationUtil.setDefaultExcelFilenameFromInput(inputFilePath);
 			}	
-			response = attrTool.convertXMLToExcel(inputFilePath,
-					outputFilePath, fileName,
-					configFilePath, delimeter);
+			handler = new AttributeXMLFileHandler();			
 		}
+		AttributeTool attrTool = new AttributeTool();
+		String response = attrTool.convertFile(inputFilePath, outputFilePath, fileName, configFilePath, delimeter, handler);
 			 
 		return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", response);		
 		
@@ -187,6 +172,27 @@ public class HomeController extends Controller {
 		}
 			 
 		return redirect(routes.HomeController.openLOVSchemaForm()).flashing("info", response);		
+		
+	}
+	
+	public Result openBGPReportForm(Http.Request request) {
+		Form<BGPReport> bgpReport = formFactory.form(BGPReport.class);				
+		return ok(views.html.bgpreport.render(bgpReport,request, messages.preferred(request)));
+
+	}
+
+	public Result bgpReport(Http.Request request) {
+		DynamicForm form = formFactory.form().bindFromRequest(request);	
+		String errors = FileValidationUtil.validateFormForValidFiles(form);
+		if(!errors.isEmpty()){
+			return redirect(routes.HomeController.openAttributeToolForm()).flashing("info", errors);	
+		}
+		BGPReport bgpReport = new BGPReport();		
+		
+		String response = bgpReport.generateReport();
+		
+			 
+		return redirect(routes.HomeController.openBGPReportForm()).flashing("info", response);		
 		
 	}
 

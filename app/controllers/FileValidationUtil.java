@@ -17,7 +17,7 @@ public class FileValidationUtil {
 		if (!isNullOrBlank(value)) {
 			File tmpFile = new File(value);
 			if (!tmpFile.isFile()) {
-				errors.add("File does not exist2 - " + value);
+				errors.add("File does not exist - " + value);
 			}
 		}
 		value = form.get("outputFilePath");

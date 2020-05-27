@@ -14,7 +14,6 @@ public class BGPReport {
 		userinput.setPassword(password);
 		userinput.setContextID(contextID);
 		userinput.setInputFile(new File(inputFile));
-		System.out.println(userinput.getInputFile().getAbsolutePath());
 
 		try {			
 			ReportGenerator.generateReport(userinput);

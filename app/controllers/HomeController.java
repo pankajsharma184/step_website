@@ -228,7 +228,7 @@ public class HomeController extends Controller {
 		}
 		BGPReport bgpReport = new BGPReport();			
 		String response = bgpReport.generateReport(form.get("inputServerPath"),form.get("username"),
-				form.get("password"),form.get("contextID"),form.get("inputFile"));			 
+				form.get("password"),form.get("contextID"),form.get("inputFilePath"));			 
 		return redirect(routes.HomeController.openBGPReportForm()).flashing("info", response);		
 		
 	}

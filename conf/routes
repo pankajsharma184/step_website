@@ -27,6 +27,8 @@ POST	/bgpReport					controllers.HomeController.bgpReport(request: Request)
 
 
 #sample file routes
-GET 	/attributeschemaproperties  controllers.FileController.downloadAttributeProperties()
-GET 	/attributeschemaexcel		controllers.FileController.downloadAttributeExcel()
-GET 	/attributeschemaxml			controllers.FileController.downloadAttributeXML()
+GET 	/getSample/attribute/:type  controllers.FileController.downloadAttributeSample(type: String)
+GET 	/getSample/attributeLinks/:type  controllers.FileController.downloadAttributeLinksSample(type: String)
+GET 	/getSample/lovSchema/:type  controllers.FileController.downloadLovSchemaSample(type: String)
+GET 	/getSample/bgpReport/:type  controllers.FileController.downloadBgpReportSample(type: String)
+

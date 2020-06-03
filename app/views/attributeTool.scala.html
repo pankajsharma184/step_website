@@ -11,13 +11,13 @@
             <li>Delimiter : Multivalue separator string. Can be blank. Default ; will be used.</li>       
           </ul>
           <p> You can Download Below Sample Files for reference </p>
-          <a href="@routes.FileController.downloadAttributeProperties" download> Config Properties </a>, 
-          <a href="@routes.FileController.downloadAttributeExcel" download> Excel File </a>,
-          <a href="@routes.FileController.downloadAttributeXML" download> XML File </a> 
+          <a href='@routes.FileController.downloadAttributeSample("properties")' download> Config Properties </a>, 
+          <a href='@routes.FileController.downloadAttributeSample("excel")' download> Excel File </a>,
+          <a href='@routes.FileController.downloadAttributeSample("xml")' download> XML File </a> 
 
 } {
  
-<div class="alert alert-info">@request.flash().get("info")</div>
+		<div class="alert alert-info">@request.flash().get("info")</div>
 		@helper.form(action =routes.HomeController.attributeTool()){		
 			@helper.select(field = extract("types"), options = helper.options(types).toSeq, '_label -> "Select")	
 			@helper.inputText(extract("inputFilePath"), 

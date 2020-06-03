@@ -1,49 +1,9 @@
 @(extract : Form[LOVSchema],types: List[String])(implicit  request: Http.Request, messages: play.i18n.Messages)
 @import views.html.helper._;
-<html lang="en">
 
-<head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Step Automation Projects</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href='@routes.Assets.versioned("vendor/bootstrap/css/bootstrap.min.css")' rel="stylesheet" type="text/css" media="screen" />
-
-  <!-- Custom styles for this template -->
-  <link href='@routes.Assets.versioned("css/scrolling-nav.css")' rel="stylesheet" type="text/css" media="screen" />
-  <link href='@routes.Assets.versioned("css/custom.css")' rel="stylesheet" type="text/css" media="screen" />
-  
-
-</head>
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="@routes.HomeController.index">CODIFYD</a>
-     
-    </div>
-  </nav>
-
-  <div class="bg-primary body-banner body-header">
-    <div class="container text-center">
-      <h1>LOV Schema Tools</h1>
-      <p class="lead"></p>
-    </div>
-  </div>
-
-  <section id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>About</h2>
-          <p class="lead"> Used when we need to convert schema of a LOV from Excel to XML. Can also be used to convert XML to Excel</p>
+@template("LOV Schema Tools") {
+  		  <p class="lead"> Used when we need to convert schema of a LOV from Excel to XML. Can also be used to convert XML to Excel</p>
           <ul>
             <li>Input File*: Full Source file path which will be converted.</li>
             <li>Output File : Folder path where the file will be delivered. If blank, Parent directory of input file will be used.</li>
@@ -52,76 +12,37 @@
             <li>Delimiter : Multivalue separator string. Can be blank. Default ; will be used.</li>       
           </ul>
           <p> You can Download Below Sample Files for reference </p>
-          <a href="@routes.FileController.downloadAttributeProperties" download> Config Properties </a>, 
-          <a href="@routes.FileController.downloadAttributeExcel" download> Excel File </a>,
-          <a href="@routes.FileController.downloadAttributeXML" download> XML File </a> 				
-        </div>
-      </div>
-    </div>
-  </section>
+          <a href='@routes.FileController.downloadLovSchemaSample("properties")' download> Config Properties </a>, 
+          <a href='@routes.FileController.downloadLovSchemaSample("excel")' download> Excel File </a>,
+          <a href='@routes.FileController.downloadLovSchemaSample("xml")' download> XML File </a> 
 
-  <section id="services" class="bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Form</h2>
-          <hr class="style1">
-          <div id="featured">     
-          	
-          	<div class="alert alert-info">@request.flash().get("info")</div>
-          			
-			@helper.form(action =routes.HomeController.lovSchema()){		
+} {
+ 
+		<div class="alert alert-info">@request.flash().get("info")</div>
+		@helper.form(action =routes.HomeController.lovSchema()){				
 			@helper.select(field = extract("types"), options = helper.options(types).toSeq, '_label -> "Select")	
 			@helper.inputText(extract("inputFilePath"), 
 				args = ('size) -> 50,
 				('required) -> "required",
 				('_label) -> "Enter Input File path ", 
-				('placeholder) -> "‪C:\\Users\\Jhonny\\input.xlsx")
+				('placeholder) -> "C:\\Users\\Jhonny\\input.xlsx")
 			@helper.inputText(extract("outputFilePath"),
 				args = ('size) -> 50,				
 				('_label) -> "Enter Output Folder path ",
-				('placeholder) -> "‪C:\\Users\\Jhonny")	
+				('placeholder) -> "C:\\Users\\Jhonny")	
 			@helper.inputText(extract("fileName"),
 				args = ('size) -> 50,				
 				('_label) -> "Enter File name ",
-				('placeholder) -> "‪output.xml")	
+				('placeholder) -> "output.xml")	
 			@helper.inputText(extract("configFilePath"),
 				args = ('size) -> 50,
 			 	('_label) -> "Enter configuration file path ",
-			 	('placeholder) -> "‪C:\\Users\\Jhonny\\config.properties")
+			 	('placeholder) -> "C:\\Users\\Jhonny\\config.properties")
 			@helper.inputText(extract("delimeter"),
 				args = ('size) -> 50,
 				('_label) -> "Enter Delimiter ",
 				('placeholder) -> ";")			
 			<input type="submit" name="submit" value="Convert">
 		}
-		</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Codifyd 2020</p>
-    </div>
-    <!-- /.container -->
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="@routes.Assets.versioned("vendor/jquery/jquery.min.js")" type="text/javascript"></script>
-  <script src="@routes.Assets.versioned("vendor/bootstrap/js/bootstrap.bundle.min.js")" type="text/javascript"></script>
-  
-  <!-- Plugin JavaScript -->
-  <script src="@routes.Assets.versioned("vendor/jquery-easing/jquery.easing.min.js")" type="text/javascript"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom JavaScript for this theme -->
-  <script src="@routes.Assets.versioned("js/scrolling-nav.js")" type="text/javascript"></script>
-  
-</body>
-
-</html>
+}

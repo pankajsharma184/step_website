@@ -3,9 +3,9 @@ package controllers;
 import java.io.IOException;
 import javax.inject.Inject;
 
-import com.codifyd.automation.attribute.AttributeSampleInfo;
-import com.codifyd.automation.attributelink.AttributeLinkSampleInfo;
-import com.codifyd.automation.lov.LovSampleInfo;
+import com.codifyd.automation.stepconversion.attributelink.AttributeLinkSampleInfo;
+import com.codifyd.automation.stepconversion.attributeschema.AttributeSampleInfo;
+import com.codifyd.automation.stepconversion.lovschema.LovSampleInfo;
 
 import play.data.FormFactory;
 import play.i18n.MessagesApi;

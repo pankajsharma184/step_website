@@ -23,13 +23,13 @@ import javax.inject.Inject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import com.codifyd.automation.attribute.AttributeExcelFileHandler;
-import com.codifyd.automation.attribute.AttributeXMLFileHandler;
-import com.codifyd.automation.attributelink.AttributeLinkExcelFileHandler;
-import com.codifyd.automation.attributelink.AttributeLinkXMLFileHandler;
-import com.codifyd.automation.lov.LovExcelFileHandler;
-import com.codifyd.automation.lov.LovXMLFileHandler;
-import com.codifyd.automation.util.FileConversionHandler;
+import com.codifyd.automation.stepconversion.attributelink.AttributeLinkExcelFileHandler;
+import com.codifyd.automation.stepconversion.attributelink.AttributeLinkXMLFileHandler;
+import com.codifyd.automation.stepconversion.attributeschema.AttributeExcelFileHandler;
+import com.codifyd.automation.stepconversion.attributeschema.AttributeXMLFileHandler;
+import com.codifyd.automation.stepconversion.lovschema.LovExcelFileHandler;
+import com.codifyd.automation.stepconversion.lovschema.LovXMLFileHandler;
+import com.codifyd.automation.stepconversion.util.FileConversionHandler;
 
 import play.data.DynamicForm;
 import play.data.DynamicForm.Dynamic;

@@ -3,9 +3,9 @@ package controllers;
 import java.io.File;
 import java.io.IOException;
 
-import com.codifyd.automation.util.AutomationConstants;
-import com.codifyd.automation.util.FileConversionHandler;
-import com.codifyd.automation.util.UserInputFileUtilDO;
+import com.codifyd.automation.stepconversion.util.AutomationConstants;
+import com.codifyd.automation.stepconversion.util.FileConversionHandler;
+import com.codifyd.automation.stepconversion.util.UserInputFileUtilDO;
 
 public class AttributeTool {
 	

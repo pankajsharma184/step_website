@@ -6,9 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-import com.codifyd.automation.util.AutomationConstants;
-import com.codifyd.automation.util.FileConversionHandler;
-import com.codifyd.automation.util.UserInputFileUtilDO;
+import com.codifyd.automation.stepconversion.util.AutomationConstants;
+import com.codifyd.automation.stepconversion.util.FileConversionHandler;
+import com.codifyd.automation.stepconversion.util.UserInputFileUtilDO;
 
 public class LOVSchema {
 	

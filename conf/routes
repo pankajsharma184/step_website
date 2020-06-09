@@ -15,6 +15,7 @@ GET 	/AttributeToolForm			controllers.HomeController.openAttributeToolForm(reque
 GET 	/AttributeLinksToolForm		controllers.HomeController.openAttributeLinksToolForm(request: Request)
 GET 	/LOVSchemaForm				controllers.HomeController.openLOVSchemaForm(request: Request)
 GET 	/BGPReportForm				controllers.HomeController.openBGPReportForm(request: Request)
+GET 	/MILConversionForm			controllers.HomeController.openMILConversionForm(request: Request)
 
 	+ nocsrf
 POST	/attributeTool				controllers.HomeController.attributeTool(request: Request)
@@ -24,11 +25,14 @@ POST	/attributeLinks				controllers.HomeController.attributeLinksTool(request: R
 POST	/lovSchema					controllers.HomeController.lovSchema(request: Request)
 	+ nocsrf
 POST	/bgpReport					controllers.HomeController.bgpReport(request: Request)
+	+ nocsrf
+POST	/milConversion				controllers.HomeController.milConversion(request: Request)
 
 
 #sample file routes
-GET 	/getSample/attribute/:type  controllers.FileController.downloadAttributeSample(type: String)
-GET 	/getSample/attributeLinks/:type  controllers.FileController.downloadAttributeLinksSample(type: String)
-GET 	/getSample/lovSchema/:type  controllers.FileController.downloadLovSchemaSample(type: String)
-GET 	/getSample/bgpReport/:type  controllers.FileController.downloadBgpReportSample(type: String)
+GET 	/getSample/attribute/:type  		controllers.FileController.downloadAttributeSample(type: String)
+GET 	/getSample/attributeLinks/:type  	controllers.FileController.downloadAttributeLinksSample(type: String)
+GET 	/getSample/lovSchema/:type  		controllers.FileController.downloadLovSchemaSample(type: String)
+GET 	/getSample/bgpReport/:type  		controllers.FileController.downloadBgpReportSample(type: String)
+GET 	/getSample/milConversion/:type		controllers.FileController.downloadMilConversionSample(type: String)
 

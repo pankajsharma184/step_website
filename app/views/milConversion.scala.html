@@ -1,0 +1,41 @@
+@(extract : Form[MILConversion],types: List[String])(implicit  request: Http.Request, messages: play.i18n.Messages)
+@import views.html.helper._;
+
+@template("MIL Conversion Tool") {
+  		  <p class="lead"> Used when we need to convert StepXML to MIL  file.</p>
+          <ul>
+            <li>Input File*: Full Source file path which will be converted.</li>
+            <li>Output File : Folder path where the file will be delivered. If blank, Parent directory of input file will be used.</li>
+            <li>File name : Desired output file name along with extension[.xml]. If blank, Converted[inputfilename]Timestamp.xml will be used.</li>      
+            <li>Config path : Configuration Path in case there are custom values. Else the default file will be used.</li>                   
+          </ul>
+          <p> You can Download Below Sample Files for reference </p>
+          <a href='@routes.FileController.downloadMilConversionSample("properties")' download> Config Properties </a>,          
+          <a href='@routes.FileController.downloadMilConversionSample("xml")' download> XML File </a> 
+
+} {
+ 
+		<div class="alert alert-info">@request.flash().get("info")</div>
+		@helper.form(action =routes.HomeController.milConversion()){		
+			@helper.select(field = extract("types"), options = helper.options(types).toSeq, '_label -> "Select")	
+			@helper.inputText(extract("inputFilePath"), 
+				args = ('size) -> 50,
+				('required) -> "required",
+				('_label) -> "Enter Input File path ", 
+				('placeholder) -> "C:\\Users\\Jhonny\\input.xlsx")
+			@helper.inputText(extract("outputFilePath"),
+				args = ('size) -> 50,				
+				('_label) -> "Enter Output Folder path ",
+				('placeholder) -> "C:\\Users\\Jhonny")	
+			@helper.inputText(extract("fileName"),
+				args = ('size) -> 50,				
+				('_label) -> "Enter File name ",
+				('placeholder) -> "output.xml")	
+			@helper.inputText(extract("configFilePath"),
+				args = ('size) -> 50,
+			 	('_label) -> "Enter configuration file path ",
+			 	('placeholder) -> "C:\\Users\\Jhonny\\config.properties")					
+			<input type="submit" name="submit" value="Convert">
+		}
+
+}

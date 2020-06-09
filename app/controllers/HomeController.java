@@ -233,4 +233,46 @@ public class HomeController extends Controller {
 		
 	}
 
+	public Result openMILConversionForm(Http.Request request) {
+		Form<MILConversion> milConversionForm = formFactory.form(MILConversion.class);		
+		List<String> options = new ArrayList<String>();
+		options.add("TypeA");
+		options.add("TypeC");		
+		return ok(views.html.milConversion.render(milConversionForm,options, request, messages.preferred(request)));
+
+	}
+
+	public Result milConversion(Http.Request request) {
+		DynamicForm form = formFactory.form().bindFromRequest(request);	
+		String errors = FileValidationUtil.validateFormForValidFiles(form);
+		if(!errors.isEmpty()){
+			return redirect(routes.HomeController.openMILConversionForm()).flashing("info", errors);	
+		}
+		String inputFilePath = form.get("inputFilePath");
+		String outputFilePath = form.get("outputFilePath");
+		String fileName = form.get("fileName");
+		String configFilePath = form.get("configFilePath");
+		
+		
+		if(FileValidationUtil.isNullOrBlank(outputFilePath)){
+			outputFilePath = FileValidationUtil.getDefaultOutputDirectoryFromInput(inputFilePath);
+		}				
+		if(FileValidationUtil.isNullOrBlank(fileName)){
+			fileName = FileValidationUtil.setDefaultXMLFilenameFromInput(inputFilePath);
+		}
+		
+		String selectedOpt = formFactory.form().bindFromRequest(request).get("types");
+		 
+		boolean isSkeleton = true;
+		if(selectedOpt.equals("TypeA")){
+			isSkeleton = true;			
+		}else if(selectedOpt.equals("TypeC")){
+			isSkeleton = false;				
+		}
+		MILConversion milConversion = new MILConversion();
+		String response = milConversion.convertFile(inputFilePath, outputFilePath, fileName, configFilePath,isSkeleton);			 
+		return redirect(routes.HomeController.openMILConversionForm()).flashing("info", response);				
+	}
+
+	
 }

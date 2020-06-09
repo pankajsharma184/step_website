@@ -6,9 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-import com.codifyd.automation.stepconversion.util.AutomationConstants;
+
 import com.codifyd.automation.stepconversion.util.FileConversionHandler;
 import com.codifyd.automation.stepconversion.util.UserInputFileUtilDO;
+import com.codifyd.automation.util.AutomationConstants;
 
 public class LOVSchema {
 	
@@ -19,7 +20,7 @@ public class LOVSchema {
 		userInputFileUtilDO.setFilename(fileName);
 		userInputFileUtilDO.setDelimeters(delimeter);
 		try {
-			userInputFileUtilDO.setPropertiesFile(configFilePath, AutomationConstants.LOV);
+			userInputFileUtilDO.setConfigFile(configFilePath, AutomationConstants.LOV);
 		} catch (IOException e) {
 			return("Error occured while processing properties file : "+e.getMessage());
 		}

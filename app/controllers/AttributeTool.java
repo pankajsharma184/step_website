@@ -3,9 +3,10 @@ package controllers;
 import java.io.File;
 import java.io.IOException;
 
-import com.codifyd.automation.stepconversion.util.AutomationConstants;
+
 import com.codifyd.automation.stepconversion.util.FileConversionHandler;
 import com.codifyd.automation.stepconversion.util.UserInputFileUtilDO;
+import com.codifyd.automation.util.AutomationConstants;
 
 public class AttributeTool {
 	
@@ -16,7 +17,7 @@ public class AttributeTool {
 		userInputFileUtilDO.setFilename(fileName);
 		userInputFileUtilDO.setDelimeters(delimeter);
 		try {
-			userInputFileUtilDO.setPropertiesFile(configFilePath, AutomationConstants.ATTRIBUTE);
+			userInputFileUtilDO.setConfigFile(configFilePath, AutomationConstants.ATTRIBUTE);
 		} catch (IOException e) {
 			return("Error occured while processing properties file : "+e.getMessage());
 		}

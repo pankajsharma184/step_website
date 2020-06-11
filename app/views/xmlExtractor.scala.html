@@ -1,0 +1,60 @@
+@(extract : Form[XMLExtractor], types: List[String])(implicit  request: Http.Request, messages: play.i18n.Messages)
+@import views.html.helper._;
+
+@template("XML Extractor tool") {
+  		  <p class="lead">If we have a exported step XML file and we want to extract objects based on IDs.</p>
+          <p> Sometimes step does not let you export just one endpoint, but we have to export all of it and migrate only one. We can use this tool to get that file.
+          <ul>            
+            <li>Input File*: Full Source file path of input file.</li>    
+            <li>Dropdown*: Select the type of object you are trying to extract.</li>
+            <li>TextField*: IDs separated by comma or new line</li>                    
+          </ul>       
+} {
+ 
+		<div class="alert alert-info">@request.flash().get("info")</div>
+		@helper.form(action =routes.HomeController.XMLExtractor(),'id -> "formExtract"){		
+						
+						
+						
+						
+		<table class="table table-sm" id = "extractorTable">
+  <thead>
+    <tr>      
+      <th scope="col">Step Node Type</th>
+      <th scope="col">Node IDs</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>
+       @helper.select(field = extract("stepNodeType_1"), 
+      	options = helper.options(types).toSeq, '_label -> null)
+      </td>
+      <td>
+      @helper.textarea(extract("stepNodeIDs_1"),
+      '_label -> null, 
+      'cols -> 50,
+      'row -> 5 )
+      </td>
+    </tr>
+   
+  </tbody>
+</table>
+						
+						
+						
+						
+			
+			
+			<button type="button" id="addExtractionTypes" class="btn btn-secondary btn-sm">Add Types</button>
+			@helper.inputText(extract("inputFilePath"), 
+				args = ('size) -> 50,
+				('required) -> "required",
+				('_label) -> "Enter Input File path ", 
+				('placeholder) -> "C:\\Users\\Jhonny\\input.xml")	
+									
+			<input type="submit" name="submit" value="Extract XML">
+		}
+
+}

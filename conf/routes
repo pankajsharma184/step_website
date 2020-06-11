@@ -16,6 +16,7 @@ GET 	/AttributeLinksToolForm		controllers.HomeController.openAttributeLinksToolF
 GET 	/LOVSchemaForm				controllers.HomeController.openLOVSchemaForm(request: Request)
 GET 	/BGPReportForm				controllers.HomeController.openBGPReportForm(request: Request)
 GET 	/MILConversionForm			controllers.HomeController.openMILConversionForm(request: Request)
+GET 	/XMLExtractorForm			controllers.HomeController.openXMLExtractorForm(request: Request)
 
 	+ nocsrf
 POST	/attributeTool				controllers.HomeController.attributeTool(request: Request)
@@ -27,6 +28,8 @@ POST	/lovSchema					controllers.HomeController.lovSchema(request: Request)
 POST	/bgpReport					controllers.HomeController.bgpReport(request: Request)
 	+ nocsrf
 POST	/milConversion				controllers.HomeController.milConversion(request: Request)
+	+ nocsrf
+POST	/xmlExtractor				controllers.HomeController.XMLExtractor(request: Request)
 
 
 #sample file routes
